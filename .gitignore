@@ -1,0 +1,79 @@
+# =========================
+# Dependencies
+# =========================
+node_modules/
+.pnpm-store/
+.pnp/
+.pnp.js
+
+# =========================
+# Build Outputs
+# =========================
+dist/
+build/
+.out/
+.next/
+.nuxt/
+.vercel/
+.turbo/
+coverage/
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# Environment Files
+# =========================
+.env
+.env.local
+.env.*.local
+
+# =========================
+# TypeScript
+# =========================
+*.tsbuildinfo
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Turborepo / Nx
+# =========================
+.turbo/
+nx-cache/
+.cache/
+
+# =========================
+# Testing
+# =========================
+coverage/
+jest-cache/
+
+# =========================
+# Storybook
+# =========================
+storybook-static/
+
+# =========================
+# Misc
+# =========================
+*.pem
+*.key
