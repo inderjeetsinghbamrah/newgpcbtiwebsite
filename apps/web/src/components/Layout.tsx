@@ -4,18 +4,18 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 interface LayoutProps {
-  children: ReactNode;
+    children: ReactNode;
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <Topbar />
-      <Navbar />
-      <main className="flex-1">{children}</main>
-      <Footer />
-    </div>
-  );
+    return (
+        <div className="min-h-screen bg-background flex flex-col">
+            <Topbar />
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+        </div>
+    );
 };
 
 export default Layout;

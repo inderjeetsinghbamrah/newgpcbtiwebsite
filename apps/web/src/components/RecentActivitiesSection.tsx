@@ -7,17 +7,17 @@ import ActivitySlideshow from "@/components/ActivitySlideshow";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const activities = [
-  { title: "Technical Club — Robotics Workshop", date: "March 10, 2025", image: heroCampus, club: "Robotics Club",
+  { title: "Annual Prize Distribution (GPC Bathinda)", date: "April 04, 2025", image: heroCampus, club: "College Event",
     gallery: [heroCampus, heroCampus, heroCampus, heroCampus, heroCampus] },
-  { title: "NSS — Blood Donation Camp", date: "March 5, 2025", image: heroCampus, club: "NSS Unit",
+  { title: "Literary Club — Speech Competition (Women's Day)", date: "March 21, 2025", image: heroCampus, club: "Literary Club",
     gallery: [heroCampus, heroCampus, heroCampus, heroCampus] },
-  { title: "Cultural Society — Basant Panchami Fest", date: "Feb 28, 2025", image: heroCampus, club: "Cultural Society",
+  { title: "Anti Drug Campaign — NSS Red Ribbon Club", date: "March 20, 2025", image: heroCampus, club: "NSS Club",
     gallery: [heroCampus, heroCampus, heroCampus, heroCampus, heroCampus] },
-  { title: "Sports Club — Inter-College Cricket", date: "Feb 22, 2025", image: heroCampus, club: "Sports Club",
+  { title: "Art and Hobby Club — Dance Competition", date: "Feb 20, 2025", image: heroCampus, club: "Art & Hobby Club",
     gallery: [heroCampus, heroCampus, heroCampus, heroCampus] },
-  { title: "Coding Club — Hackathon 2025", date: "Feb 15, 2025", image: heroCampus, club: "Coding Club",
+  { title: "Rangoli Competition — Art & Hobby Club", date: "Aug 24, 2024", image: heroCampus, club: "Art & Hobby Club",
     gallery: [heroCampus, heroCampus, heroCampus, heroCampus, heroCampus] },
-  { title: "Eco Club — Tree Plantation Drive", date: "Feb 10, 2025", image: heroCampus, club: "Eco Club",
+  { title: "Constitutional Day — 'Hamara Samvidhan Hamara Swabhimaan'", date: "Nov 24, 2024", image: heroCampus, club: "Science Club",
     gallery: [heroCampus, heroCampus, heroCampus, heroCampus] },
 ];
 
@@ -52,9 +52,12 @@ const RecentActivitiesSection = () => {
             ))}
           </div>
 
-          <div className="text-center mt-10">
+          <div className="text-center mt-10 flex flex-wrap gap-4 justify-center">
             <Link to="/students#clubs" className="inline-flex items-center gap-2 bg-gradient-gold text-accent-foreground px-6 py-3 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity">
               {t.activities.viewAll} <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link to="/gallery" className="inline-flex items-center gap-2 border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold text-sm hover:bg-primary hover:text-primary-foreground transition-colors">
+              {t.activities.viewGallery || "View Gallery"} <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

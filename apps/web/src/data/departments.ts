@@ -53,9 +53,9 @@ const departments: Department[] = [
     seats: 40,
     duration: "3 Years (6 Semesters)",
     introduction:
-      "The Department of Architectural Assistantship trains students in architectural drafting, building design, construction supervision, and interior design. Students learn to assist architects and civil engineers in preparing drawings, 3D models, and project documentation using modern CAD tools. The program blends creativity with technical precision, preparing graduates for careers in architecture firms, construction companies, and urban planning bodies.",
+        "The Department of Architectural Assistantship trains students in architectural drafting, building design, construction supervision, and interior design. Students learn to assist architects and civil engineers in preparing drawings, 3D models, and project documentation using modern CAD tools. The program blends creativity with technical precision, preparing graduates for careers in architecture firms, construction companies, and urban planning bodies.",
     hodMessage:
-      "Architecture shapes the built environment around us. Our department aims to develop skilled professionals who can bridge the gap between architectural vision and construction reality. We emphasize hands-on drafting, model-making, and site exposure. — HOD, Architectural Assistantship",
+        "Architecture shapes the built environment around us. Our department aims to develop skilled professionals who can bridge the gap between architectural vision and construction reality. We emphasize hands-on drafting, model-making, and site exposure. — HOD, Architectural Assistantship",
     keyFeatures: [
       "Dedicated architectural drafting studio",
       "AutoCAD, SketchUp, and Revit software labs",
@@ -141,9 +141,9 @@ const departments: Department[] = [
     seats: 60,
     duration: "3 Years (6 Semesters)",
     introduction:
-      "The Department of Civil Engineering is a founding department established in 1985. It provides comprehensive training in structural engineering, surveying, building construction, transportation, and environmental engineering. Students gain extensive field experience through surveys, site visits, and practical projects. The department has a strong alumni network in both government and private construction sectors.",
+        "The Department of Civil Engineering is a founding department established in 1985. It provides comprehensive training in structural engineering, surveying, building construction, transportation, and environmental engineering. Students gain extensive field experience through surveys, site visits, and practical projects. The department has a strong alumni network in both government and private construction sectors.",
     hodMessage:
-      "Civil Engineering builds the foundation of civilization. Our department prepares students to design, construct, and manage infrastructure projects with the latest tools and techniques. From AutoCAD to field surveying, we ensure our graduates are industry-ready. — Er. Harjinder Singh, HOD",
+        "Civil Engineering builds the foundation of civilization. Our department prepares students to design, construct, and manage infrastructure projects with the latest tools and techniques. From AutoCAD to field surveying, we ensure our graduates are industry-ready. — Er. Harjinder Singh, HOD",
     keyFeatures: [
       "Extensive surveying equipment and total stations",
       "Concrete and material testing facilities",
@@ -247,9 +247,9 @@ const departments: Department[] = [
     seats: 60,
     duration: "3 Years (6 Semesters)",
     introduction:
-      "The Department of Computer Science & Engineering was established in 1998 and has since been at the forefront of technical education in the field of computing. The department offers a comprehensive diploma program that covers programming, databases, networking, web technologies, and modern software development practices. With state-of-the-art labs and experienced faculty, students receive both theoretical knowledge and practical skills necessary for the IT industry.",
+        "The Department of Computer Science & Engineering was established in 1998 and has since been at the forefront of technical education in the field of computing. The department offers a comprehensive diploma program that covers programming, databases, networking, web technologies, and modern software development practices. With state-of-the-art labs and experienced faculty, students receive both theoretical knowledge and practical skills necessary for the IT industry.",
     hodMessage:
-      "Welcome to the Department of Computer Science & Engineering. Our mission is to nurture technically competent professionals who can contribute meaningfully to the ever-evolving IT industry. We emphasize hands-on learning, industry exposure, and holistic development. I encourage every student to leverage the resources available and strive for excellence. — Er. Rajesh Kumar, HOD",
+        "Welcome to the Department of Computer Science & Engineering. Our mission is to nurture technically competent professionals who can contribute meaningfully to the ever-evolving IT industry. We emphasize hands-on learning, industry exposure, and holistic development. I encourage every student to leverage the resources available and strive for excellence. — Er. Rajesh Kumar, HOD",
     keyFeatures: [
       "Fully air-conditioned computer labs with latest hardware",
       "High-speed internet connectivity across the department",
@@ -361,9 +361,9 @@ const departments: Department[] = [
     seats: 60,
     duration: "3 Years (6 Semesters)",
     introduction:
-      "The Department of Electrical Engineering, established in 1985, is one of the foundational departments of the college. It provides comprehensive training in power systems, electrical machines, control systems, and emerging renewable energy technologies. The department is committed to producing skilled technicians who can serve in power generation, transmission, and distribution sectors.",
+        "The Department of Electrical Engineering, established in 1985, is one of the foundational departments of the college. It provides comprehensive training in power systems, electrical machines, control systems, and emerging renewable energy technologies. The department is committed to producing skilled technicians who can serve in power generation, transmission, and distribution sectors.",
     hodMessage:
-      "Electrical Engineering is the backbone of modern infrastructure. Our department strives to equip students with both classical and modern electrical engineering skills, from power systems to PLC/SCADA and renewable energy. We welcome you to a journey of empowering the nation. — Er. Gurpreet Kaur, HOD",
+        "Electrical Engineering is the backbone of modern infrastructure. Our department strives to equip students with both classical and modern electrical engineering skills, from power systems to PLC/SCADA and renewable energy. We welcome you to a journey of empowering the nation. — Er. Gurpreet Kaur, HOD",
     keyFeatures: [
       "Well-equipped electrical machines laboratory",
       "PLC & SCADA training facility",
@@ -454,9 +454,9 @@ const departments: Department[] = [
     seats: 60,
     duration: "3 Years (6 Semesters)",
     introduction:
-      "The Department of Electronics & Communication Engineering was established in 1998 to cater to the growing demand for skilled professionals in the electronics and telecom sectors. The department offers training in analog and digital electronics, communication systems, embedded systems, and IoT technologies. With modern labs and dedicated faculty, students are prepared for careers in electronics manufacturing, telecommunications, and embedded systems development.",
+        "The Department of Electronics & Communication Engineering was established in 1998 to cater to the growing demand for skilled professionals in the electronics and telecom sectors. The department offers training in analog and digital electronics, communication systems, embedded systems, and IoT technologies. With modern labs and dedicated faculty, students are prepared for careers in electronics manufacturing, telecommunications, and embedded systems development.",
     hodMessage:
-      "Electronics & Communication is a dynamic field that touches every aspect of modern life. Our department is committed to providing cutting-edge education with emphasis on practical skills in embedded systems, IoT, and communication technologies. I invite students to explore, innovate, and create. — Er. Manpreet Singh, HOD",
+        "Electronics & Communication is a dynamic field that touches every aspect of modern life. Our department is committed to providing cutting-edge education with emphasis on practical skills in embedded systems, IoT, and communication technologies. I invite students to explore, innovate, and create. — Er. Manpreet Singh, HOD",
     keyFeatures: [
       "Advanced communication systems lab",
       "PCB design and fabrication facility",
@@ -552,9 +552,9 @@ const departments: Department[] = [
     seats: 60,
     duration: "3 Years (6 Semesters)",
     introduction:
-      "The Department of Information Technology was established in 2004 to meet the growing demand for IT professionals. The department focuses on software development, web technologies, database management, cybersecurity, and emerging technologies like cloud computing and AI. Students are trained to develop, deploy, and manage IT solutions across diverse industry sectors.",
+        "The Department of Information Technology was established in 2004 to meet the growing demand for IT professionals. The department focuses on software development, web technologies, database management, cybersecurity, and emerging technologies like cloud computing and AI. Students are trained to develop, deploy, and manage IT solutions across diverse industry sectors.",
     hodMessage:
-      "Information Technology drives the digital transformation of every industry. Our department equips students with versatile IT skills ranging from programming and web development to cybersecurity and cloud services. We prepare our students to be adaptable professionals in the fast-paced tech world. — HOD, Information Technology",
+        "Information Technology drives the digital transformation of every industry. Our department equips students with versatile IT skills ranging from programming and web development to cybersecurity and cloud services. We prepare our students to be adaptable professionals in the fast-paced tech world. — HOD, Information Technology",
     keyFeatures: [
       "Modern computer labs with high-speed internet",
       "Cybersecurity and ethical hacking workshops",
@@ -645,9 +645,9 @@ const departments: Department[] = [
     seats: 120,
     duration: "3 Years (6 Semesters)",
     introduction:
-      "The Department of Mechanical Engineering is one of the founding departments established in 1985. It is the largest department in the college with an intake of 120 students. The department provides a strong foundation in manufacturing, thermodynamics, machine design, and industrial automation with extensive workshop training. The curriculum is designed to prepare students for roles in manufacturing, design, and maintenance sectors.",
+        "The Department of Mechanical Engineering is one of the founding departments established in 1985. It is the largest department in the college with an intake of 120 students. The department provides a strong foundation in manufacturing, thermodynamics, machine design, and industrial automation with extensive workshop training. The curriculum is designed to prepare students for roles in manufacturing, design, and maintenance sectors.",
     hodMessage:
-      "The Mechanical Engineering department has a rich legacy of producing competent engineers who have excelled in diverse industries. We focus on practical skills alongside theory, and our workshops are among the best in the region. I urge students to take full advantage of our labs and industry connections. — Er. Sukhdev Singh, HOD",
+        "The Mechanical Engineering department has a rich legacy of producing competent engineers who have excelled in diverse industries. We focus on practical skills alongside theory, and our workshops are among the best in the region. I urge students to take full advantage of our labs and industry connections. — Er. Sukhdev Singh, HOD",
     keyFeatures: [
       "Largest department with extensive workshop facilities",
       "CNC machines and modern manufacturing equipment",
@@ -751,9 +751,9 @@ const departments: Department[] = [
     seats: 60,
     duration: "3 Years (6 Semesters)",
     introduction:
-      "The Department of Mechanical Engineering (Production) was established in 1992 with a specialized focus on manufacturing processes, production planning, quality control, and industrial engineering. While sharing core mechanical fundamentals, the program emphasizes production management, CNC technology, tool design, and lean manufacturing practices essential for modern industry.",
+        "The Department of Mechanical Engineering (Production) was established in 1992 with a specialized focus on manufacturing processes, production planning, quality control, and industrial engineering. While sharing core mechanical fundamentals, the program emphasizes production management, CNC technology, tool design, and lean manufacturing practices essential for modern industry.",
     hodMessage:
-      "Production Engineering is the heart of manufacturing excellence. Our department prepares students with specialized skills in production planning, quality assurance, and advanced manufacturing. With Industry 4.0 transforming the sector, our curriculum evolves to keep graduates ahead of the curve. — HOD, ME (Production)",
+        "Production Engineering is the heart of manufacturing excellence. Our department prepares students with specialized skills in production planning, quality assurance, and advanced manufacturing. With Industry 4.0 transforming the sector, our curriculum evolves to keep graduates ahead of the curve. — HOD, ME (Production)",
     keyFeatures: [
       "Specialized CNC programming and operation training",
       "Tool and die design laboratory",
@@ -846,9 +846,9 @@ const departments: Department[] = [
     seats: 60,
     duration: "2 Years (4 Semesters)",
     introduction:
-      "The Department of D-Pharmacy offers a Diploma in Pharmacy program approved by the Pharmacy Council of India (PCI) and AICTE. The program trains students in pharmaceutical sciences, drug formulation, pharmacology, hospital pharmacy, and community pharmacy practice. Graduates are eligible for registration as pharmacists and can pursue careers in retail pharmacy, hospital pharmacy, pharmaceutical manufacturing, and drug regulatory affairs.",
+        "The Department of D-Pharmacy offers a Diploma in Pharmacy program approved by the Pharmacy Council of India (PCI) and AICTE. The program trains students in pharmaceutical sciences, drug formulation, pharmacology, hospital pharmacy, and community pharmacy practice. Graduates are eligible for registration as pharmacists and can pursue careers in retail pharmacy, hospital pharmacy, pharmaceutical manufacturing, and drug regulatory affairs.",
     hodMessage:
-      "Pharmacy is a noble profession that serves humanity through healthcare. Our department is committed to producing competent pharmacists who understand drug science, patient care, and pharmaceutical regulations. With well-equipped labs and experienced faculty, we prepare students for a rewarding career in the pharmaceutical sector. — HOD, D-Pharmacy",
+        "Pharmacy is a noble profession that serves humanity through healthcare. Our department is committed to producing competent pharmacists who understand drug science, patient care, and pharmaceutical regulations. With well-equipped labs and experienced faculty, we prepare students for a rewarding career in the pharmaceutical sector. — HOD, D-Pharmacy",
     keyFeatures: [
       "PCI approved pharmacy program",
       "Well-equipped pharmaceutics and pharmacology labs",
@@ -946,9 +946,9 @@ const departments: Department[] = [
     seats: 0,
     duration: "Serves all departments",
     introduction:
-      "The Department of Applied Sciences is the foundational academic department that serves all engineering branches during the first year and beyond. It provides instruction in Mathematics, Physics, Chemistry, English, and Environmental Studies. The department plays a crucial role in building the scientific temper and analytical abilities of students, forming the bedrock upon which specialized engineering education is built.",
+        "The Department of Applied Sciences is the foundational academic department that serves all engineering branches during the first year and beyond. It provides instruction in Mathematics, Physics, Chemistry, English, and Environmental Studies. The department plays a crucial role in building the scientific temper and analytical abilities of students, forming the bedrock upon which specialized engineering education is built.",
     hodMessage:
-      "Applied Sciences form the foundation of all engineering disciplines. Our department is dedicated to making science and mathematics accessible and engaging through practical demonstrations, interactive teaching, and continuous assessments. A strong foundation in applied sciences ensures success in all technical fields. — HOD, Applied Sciences",
+        "Applied Sciences form the foundation of all engineering disciplines. Our department is dedicated to making science and mathematics accessible and engaging through practical demonstrations, interactive teaching, and continuous assessments. A strong foundation in applied sciences ensures success in all technical fields. — HOD, Applied Sciences",
     keyFeatures: [
       "Serves all engineering departments for foundational courses",
       "Well-equipped physics and chemistry laboratories",

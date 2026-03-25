@@ -6,11 +6,14 @@ import principalImg from "@/assets/principal.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const testimonials = [
-  { name: "Rajveer Singh", course: "Computer Engineering, 2020", text: "GPC Bathinda gave me the foundation I needed. The practical approach and supportive faculty helped me secure a great placement at an MNC.", rating: 5, photo: heroCampus },
-  { name: "Priya Sharma", course: "Electronics & Communication, 2019", text: "The labs and workshops are excellent. I learned more through hands-on practice here than any theory could teach. Forever grateful!", rating: 5, photo: principalImg },
-  { name: "Amit Kumar", course: "Mechanical Engineering, 2021", text: "The campus life was amazing. From sports to technical fests, GPC Bathinda provides a holistic development environment.", rating: 4, photo: heroCampus },
-  { name: "Gurleen Kaur", course: "Architecture, 2022", text: "The design studios and site visits opened my eyes to real-world architecture. The mentorship here is unparalleled.", rating: 5, photo: principalImg },
-  { name: "Harmandeep Singh", course: "Civil Engineering, 2020", text: "From surveying camps to concrete labs, every experience at GPC Bathinda prepared me for the industry. Proud alumnus!", rating: 5, photo: heroCampus },
+  { name: "Aman Jindal", course: "Civil Engineering, Batch 2014-2017", text: "I am selected as an SDO in Water Supply and Sanitation Department. The teaching faculty of the Civil department helped me a lot in achieving my goal. GPC Bathinda is the best college in Punjab for engineering courses.", rating: 5, photo: heroCampus },
+  { name: "Jitin Kansal", course: "Civil Engineering, Batch 2010-2013", text: "I am currently working as SDO in Municipal Corporation, Ludhiana. Teaching skills and guidance of faculty members at GPC Bathinda helped me clear the government job exam without any additional coaching.", rating: 5, photo: principalImg },
+  { name: "Manik Bansal", course: "D-Pharmacy, Batch 2019-2021", text: "The teaching faculty and the college have moulded us to become better pharmacists. Presently, I am serving as Veterinary Pharmacist in Deptt. of Animal Husbandry, Punjab.", rating: 5, photo: heroCampus },
+  { name: "Lakhveer Singh", course: "Electrical Engg., Batch 2013-2016", text: "Despite surge in competition, I cracked the exam and secured a job as SSA in PSPCL in the first attempt. This was possible due to the experienced teachers of GPC Bathinda.", rating: 5, photo: principalImg },
+  { name: "Deepak Bansal", course: "Mechanical Engg., Batch 2007-2010", text: "My diploma at GPC Bathinda helped me do B.Tech with good marks, clear GATE, and pursue M.Tech from IIT Roorkee. Now I serve as Lecturer at the same place where my journey started.", rating: 5, photo: heroCampus },
+  { name: "Jaspreet Singh", course: "Electrical Engg., Batch 2013-2016", text: "I am working as JE in PSTCL for more than five years. The skills gained at GPC Bathinda helped me land this job. I will always be thankful to the faculty and Principal.", rating: 5, photo: principalImg },
+  { name: "Ravinderjeet Singh", course: "Civil Engineering, Batch 2009-2012", text: "I got selected in the Water Resources Department as a Junior Engineer. In 2022 I got promoted and currently working as SDO. Consistency, focus, and smart use of opportunities are key.", rating: 5, photo: heroCampus },
+  { name: "Harkesh Kumar", course: "Information Technology, Batch 2016-2019", text: "My passion in Graphic Designing evolved into a career with constant guidance from faculty and the Principal. I am a UI/UX Designer at Stackgeeks Lab, Chandigarh.", rating: 5, photo: principalImg },
 ];
 
 const TestimonialsSection = () => {

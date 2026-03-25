@@ -34,75 +34,75 @@ const Faculty = () => {
   const filtered = activeDept === "All" ? facultyData : facultyData.filter((f) => f.dept === activeDept);
 
   return (
-    <Layout>
-      <PageBanner
-        title="Our Faculty"
-        subtitle="Meet our experienced and dedicated faculty members committed to academic excellence"
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Faculty" }]}
-      />
+      <Layout>
+        <PageBanner
+            title="Our Faculty"
+            subtitle="Meet our experienced and dedicated faculty members committed to academic excellence"
+            breadcrumbs={[{ label: "Home", href: "/" }, { label: "Faculty" }]}
+        />
 
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          {/* Department Filter */}
-          <div className="flex flex-wrap gap-2 justify-center mb-12">
-            {departments.map((d) => (
-              <button
-                key={d}
-                onClick={() => setActiveDept(d)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                  activeDept === d
-                    ? "bg-primary text-primary-foreground shadow-md"
-                    : "bg-card text-muted-foreground border border-border hover:border-primary/30"
-                }`}
-              >
-                {d === "All" ? "All Departments" : `${d} Eng.`}
-              </button>
-            ))}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+            {/* Department Filter */}
+            <div className="flex flex-wrap gap-2 justify-center mb-12">
+              {departments.map((d) => (
+                  <button
+                      key={d}
+                      onClick={() => setActiveDept(d)}
+                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                          activeDept === d
+                              ? "bg-primary text-primary-foreground shadow-md"
+                              : "bg-card text-muted-foreground border border-border hover:border-primary/30"
+                      }`}
+                  >
+                    {d === "All" ? "All Departments" : `${d} Eng.`}
+                  </button>
+              ))}
+            </div>
+
+            {/* Faculty Grid */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {filtered.map((f, i) => (
+                  <motion.div
+                      key={f.name}
+                      variants={fadeInUp}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.05 }}
+                      className="bg-card rounded-xl border border-border shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all group"
+                  >
+                    <div className="bg-gradient-primary h-20 relative">
+                      <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-card border-4 border-card flex items-center justify-center shadow-md">
+                        <span className="text-2xl font-serif font-bold text-primary">{f.name.charAt(4)}</span>
+                      </div>
+                    </div>
+                    <div className="pt-10 pb-6 px-5 text-center">
+                      <h4 className="font-serif font-bold text-foreground text-sm">{f.name}</h4>
+                      <p className="text-xs text-gold font-medium mt-0.5">{f.designation}</p>
+                      <p className="text-xs text-muted-foreground mt-0.5">{f.dept} Engineering</p>
+
+                      <div className="mt-4 space-y-2 text-left">
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <GraduationCap className="w-3 h-3 text-gold shrink-0" />
+                          <span>{f.qual} • {f.exp}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <BookOpen className="w-3 h-3 text-gold shrink-0" />
+                          <span>{f.specialization}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <Mail className="w-3 h-3 text-gold shrink-0" />
+                          <span className="truncate">{f.email}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+              ))}
+            </div>
           </div>
-
-          {/* Faculty Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filtered.map((f, i) => (
-              <motion.div
-                key={f.name}
-                variants={fadeInUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="bg-card rounded-xl border border-border shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all group"
-              >
-                <div className="bg-gradient-primary h-20 relative">
-                  <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-card border-4 border-card flex items-center justify-center shadow-md">
-                    <span className="text-2xl font-serif font-bold text-primary">{f.name.charAt(4)}</span>
-                  </div>
-                </div>
-                <div className="pt-10 pb-6 px-5 text-center">
-                  <h4 className="font-serif font-bold text-foreground text-sm">{f.name}</h4>
-                  <p className="text-xs text-gold font-medium mt-0.5">{f.designation}</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">{f.dept} Engineering</p>
-
-                  <div className="mt-4 space-y-2 text-left">
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                      <GraduationCap className="w-3 h-3 text-gold shrink-0" />
-                      <span>{f.qual} • {f.exp}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                      <BookOpen className="w-3 h-3 text-gold shrink-0" />
-                      <span>{f.specialization}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                      <Mail className="w-3 h-3 text-gold shrink-0" />
-                      <span className="truncate">{f.email}</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </Layout>
+        </section>
+      </Layout>
   );
 };
 

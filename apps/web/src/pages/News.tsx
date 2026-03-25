@@ -28,63 +28,63 @@ const typeConfig = {
 
 const News = () => {
   return (
-    <Layout>
-      <PageBanner
-        title="News & Notices"
-        subtitle="Stay updated with the latest news, events, and announcements from GPC Bathinda"
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "News & Notices" }]}
-      />
+      <Layout>
+        <PageBanner
+            title="News & Notices"
+            subtitle="Stay updated with the latest news, events, and announcements from GPC Bathinda"
+            breadcrumbs={[{ label: "Home", href: "/" }, { label: "News & Notices" }]}
+        />
 
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="space-y-6">
-            {newsItems.map((item, i) => {
-              const config = typeConfig[item.type as keyof typeof typeConfig];
-              const Icon = config.icon;
-              return (
-                <motion.div
-                  key={item.id}
-                  variants={fadeInUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className={`bg-card rounded-xl border shadow-sm overflow-hidden hover:shadow-md transition-shadow ${
-                    item.important ? "border-gold/50 ring-1 ring-gold/20" : "border-border"
-                  }`}
-                >
-                  <div className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className={`w-10 h-10 rounded-lg ${config.bg} flex items-center justify-center shrink-0`}>
-                        <Icon className={`w-5 h-5 ${config.color}`} />
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1 flex-wrap">
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="space-y-6">
+              {newsItems.map((item, i) => {
+                const config = typeConfig[item.type as keyof typeof typeConfig];
+                const Icon = config.icon;
+                return (
+                    <motion.div
+                        key={item.id}
+                        variants={fadeInUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.05 }}
+                        className={`bg-card rounded-xl border shadow-sm overflow-hidden hover:shadow-md transition-shadow ${
+                            item.important ? "border-gold/50 ring-1 ring-gold/20" : "border-border"
+                        }`}
+                    >
+                      <div className="p-6">
+                        <div className="flex items-start gap-4">
+                          <div className={`w-10 h-10 rounded-lg ${config.bg} flex items-center justify-center shrink-0`}>
+                            <Icon className={`w-5 h-5 ${config.color}`} />
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-1 flex-wrap">
                           <span className={`text-[10px] font-semibold uppercase tracking-wider ${config.color} ${config.bg} px-2 py-0.5 rounded-full`}>
                             {config.label}
                           </span>
-                          {item.important && (
-                            <span className="text-[10px] font-semibold uppercase tracking-wider text-accent-foreground bg-gradient-gold px-2 py-0.5 rounded-full">
+                              {item.important && (
+                                  <span className="text-[10px] font-semibold uppercase tracking-wider text-accent-foreground bg-gradient-gold px-2 py-0.5 rounded-full">
                               Important
                             </span>
-                          )}
-                          <span className="text-xs text-muted-foreground">{item.date}</span>
+                              )}
+                              <span className="text-xs text-muted-foreground">{item.date}</span>
+                            </div>
+                            <h3 className="font-serif font-bold text-foreground text-lg">{item.title}</h3>
+                            <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{item.desc}</p>
+                            <button className="text-xs font-semibold text-primary hover:text-gold flex items-center gap-1 mt-3 transition-colors">
+                              Read More <ArrowRight className="w-3 h-3" />
+                            </button>
+                          </div>
                         </div>
-                        <h3 className="font-serif font-bold text-foreground text-lg">{item.title}</h3>
-                        <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{item.desc}</p>
-                        <button className="text-xs font-semibold text-primary hover:text-gold flex items-center gap-1 mt-3 transition-colors">
-                          Read More <ArrowRight className="w-3 h-3" />
-                        </button>
                       </div>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
+                    </motion.div>
+                );
+              })}
+            </div>
           </div>
-        </div>
-      </section>
-    </Layout>
+        </section>
+      </Layout>
   );
 };
 

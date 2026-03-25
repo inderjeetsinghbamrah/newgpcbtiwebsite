@@ -6,14 +6,17 @@ import heroBg from "@/assets/hero-campus.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const newsItems = [
-  "📢 Admissions open for 2025-26 session — Apply Now!",
-  "🏆 GPC Bathinda secures 1st position in State Technical Fest",
-  "📅 Annual Sports Meet scheduled for March 20-22, 2025",
-  "📝 Semester exams starting from April 5, 2025",
-  "🎓 Campus placement drive by TCS on March 25, 2025",
-  "🔬 Workshop on AI & Machine Learning — Register by March 15",
-  "🏅 Our students win Gold in National Skill Competition",
-  "📣 New Computer Lab inaugurated with 100+ workstations",
+  "📢 PSBTE Admissions 2025-26 to Diploma Courses — Apply Now!",
+  "📅 Academic Calendar 2025-26 (Odd Semester) Released",
+  "🏆 Excellent Performance at PTIS TechFest 2024-25",
+  "📝 Guidelines for Industrial Training in Final Year Courses",
+  "🎓 Annual Prize Distribution Ceremony — April 04, 2025",
+  "📢 AICTE Scholarship/Fellowship Schemes — Apply Now",
+  "📋 Conduct of PSBTE May-June 2025 Examination",
+  "🏅 Literary Club Organized Speech Competition — Women's Day",
+  "🔬 Essay Writing Competition on 'ਯੁੱਧ ਨਸ਼ਿਆਂ ਵਿਰੁੱਧ'",
+  "📣 Placement Portal and Mobile App — DTE Punjab",
+  "🌐 PMS Facilitation Center — Dr. Rupinder Singh Chahal (93169-06633)",
 ];
 
 const HeroSection = () => {
@@ -87,10 +90,10 @@ const HeroSection = () => {
                 className="flex flex-wrap gap-8 mt-12"
             >
               {[
-                { number: "35+", label: t.hero.yearsExcellence },
-                { number: "3000+", label: t.hero.alumniNetwork },
-                { number: "8+", label: t.hero.diplomaPrograms },
-                { number: "90%", label: t.hero.placementRate },
+                { number: "40+", label: t.hero.yearsExcellence },
+                { number: "10000+", label: t.hero.alumniNetwork },
+                { number: "9", label: t.hero.diplomaPrograms },
+                { number: "100%", label: t.hero.placementRate },
               ].map((stat) => (
                   <div key={stat.label}>
                     <p className="text-3xl font-bold text-gold">{stat.number}</p>

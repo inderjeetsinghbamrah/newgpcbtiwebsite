@@ -51,11 +51,11 @@ const Footer = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <Phone className="w-4 h-4 shrink-0 text-gold" />
-                  <span className="opacity-80">+91-164-2240112</span>
+                  <a href="tel:0164-2246394" className="opacity-80 hover:opacity-100 transition-opacity">0164-2246394</a>
                 </li>
                 <li className="flex items-center gap-2">
                   <Mail className="w-4 h-4 shrink-0 text-gold" />
-                  <span className="opacity-80">gpc.bathinda@gmail.com</span>
+                  <a href="mailto:gpcbathinda@punjab.gov.in" className="opacity-80 hover:opacity-100 transition-opacity">gpcbathinda@punjab.gov.in</a>
                 </li>
               </ul>
             </div>

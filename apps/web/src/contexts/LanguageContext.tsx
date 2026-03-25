@@ -17,7 +17,7 @@ const translations: Record<Lang, Translations> = { en, pa };
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     const [lang, setLangState] = useState<Lang>(() => {
-        return (localStorage.getItem("lang") as Lang) || "pa";
+        return (localStorage.getItem("lang") as Lang) || "en";
     });
 
     const setLang = useCallback((l: Lang) => {

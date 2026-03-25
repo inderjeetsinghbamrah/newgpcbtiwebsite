@@ -94,140 +94,140 @@ const Courses = () => {
   const [expanded, setExpanded] = useState<string | null>(null);
 
   return (
-    <Layout>
-      <PageBanner
-        title="Courses & Programs"
-        subtitle="AICTE-approved diploma programs designed to produce industry-ready professionals"
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Courses" }]}
-      />
+      <Layout>
+        <PageBanner
+            title="Courses & Programs"
+            subtitle="AICTE-approved diploma programs designed to produce industry-ready professionals"
+            breadcrumbs={[{ label: "Home", href: "/" }, { label: "Courses" }]}
+        />
 
-      {/* Overview */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-            {[
-              { icon: "🎓", value: "6", label: "Diploma Programs" },
-              { icon: "👥", value: "400+", label: "Total Intake" },
-              { icon: "📅", value: "3 Years", label: "Duration" },
-              { icon: "✅", value: "AICTE", label: "Approved" },
-            ].map((s) => (
-              <motion.div key={s.label} variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-                className="bg-card p-5 rounded-xl border border-border text-center shadow-sm">
-                <span className="text-2xl">{s.icon}</span>
-                <p className="text-2xl font-bold text-primary mt-2">{s.value}</p>
-                <p className="text-xs text-muted-foreground">{s.label}</p>
-              </motion.div>
-            ))}
-          </div>
+        {/* Overview */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+              {[
+                { icon: "🎓", value: "6", label: "Diploma Programs" },
+                { icon: "👥", value: "400+", label: "Total Intake" },
+                { icon: "📅", value: "3 Years", label: "Duration" },
+                { icon: "✅", value: "AICTE", label: "Approved" },
+              ].map((s) => (
+                  <motion.div key={s.label} variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+                              className="bg-card p-5 rounded-xl border border-border text-center shadow-sm">
+                    <span className="text-2xl">{s.icon}</span>
+                    <p className="text-2xl font-bold text-primary mt-2">{s.value}</p>
+                    <p className="text-xs text-muted-foreground">{s.label}</p>
+                  </motion.div>
+              ))}
+            </div>
 
-          {/* Course Cards */}
-          <div id="departments" className="space-y-6">
-            {courses.map((course, i) => (
-              <motion.div
-                key={course.id}
-                variants={fadeInUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="bg-card rounded-xl border border-border shadow-sm overflow-hidden"
-              >
-                <div
-                  className="p-6 cursor-pointer hover:bg-muted/30 transition-colors"
-                  onClick={() => setExpanded(expanded === course.id ? null : course.id)}
-                >
-                  <div className="flex items-start gap-4">
-                    <span className="text-4xl">{course.icon}</span>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-serif font-bold text-foreground">{course.title}</h3>
-                      <p className="text-sm text-muted-foreground mt-1">{course.desc}</p>
-                      <div className="flex flex-wrap items-center gap-4 mt-3 text-xs text-muted-foreground">
-                        <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{course.duration}</span>
-                        <span className="flex items-center gap-1"><Users className="w-3 h-3" />{course.seats} Seats</span>
-                        <span className="flex items-center gap-1"><GraduationCap className="w-3 h-3" />Diploma</span>
-                        <span className="flex items-center gap-1"><BookOpen className="w-3 h-3" />HOD: {course.hod}</span>
-                      </div>
-                    </div>
-                    <div className="shrink-0 text-muted-foreground">
-                      {expanded === course.id ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
-                    </div>
-                  </div>
-                </div>
-
-                {expanded === course.id && (
-                  <div className="border-t border-border px-6 py-6 bg-muted/20 animate-fade-in-up">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      <div>
-                        <h4 className="font-serif font-bold text-foreground mb-3 flex items-center gap-2">
-                          <span className="text-gold">📋</span> Eligibility
-                        </h4>
-                        <p className="text-sm text-muted-foreground">{course.eligibility}</p>
-                      </div>
-                      <div>
-                        <h4 className="font-serif font-bold text-foreground mb-3 flex items-center gap-2">
-                          <span className="text-gold">📖</span> Key Subjects
-                        </h4>
-                        <div className="flex flex-wrap gap-1.5">
-                          {course.subjects.map((s) => (
-                            <span key={s} className="text-xs bg-muted px-2 py-1 rounded text-muted-foreground">{s}</span>
-                          ))}
+            {/* Course Cards */}
+            <div id="departments" className="space-y-6">
+              {courses.map((course, i) => (
+                  <motion.div
+                      key={course.id}
+                      variants={fadeInUp}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.05 }}
+                      className="bg-card rounded-xl border border-border shadow-sm overflow-hidden"
+                  >
+                    <div
+                        className="p-6 cursor-pointer hover:bg-muted/30 transition-colors"
+                        onClick={() => setExpanded(expanded === course.id ? null : course.id)}
+                    >
+                      <div className="flex items-start gap-4">
+                        <span className="text-4xl">{course.icon}</span>
+                        <div className="flex-1">
+                          <h3 className="text-xl font-serif font-bold text-foreground">{course.title}</h3>
+                          <p className="text-sm text-muted-foreground mt-1">{course.desc}</p>
+                          <div className="flex flex-wrap items-center gap-4 mt-3 text-xs text-muted-foreground">
+                            <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{course.duration}</span>
+                            <span className="flex items-center gap-1"><Users className="w-3 h-3" />{course.seats} Seats</span>
+                            <span className="flex items-center gap-1"><GraduationCap className="w-3 h-3" />Diploma</span>
+                            <span className="flex items-center gap-1"><BookOpen className="w-3 h-3" />HOD: {course.hod}</span>
+                          </div>
+                        </div>
+                        <div className="shrink-0 text-muted-foreground">
+                          {expanded === course.id ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
                         </div>
                       </div>
-                      <div>
-                        <h4 className="font-serif font-bold text-foreground mb-3 flex items-center gap-2">
-                          <span className="text-gold">🔬</span> Laboratories
-                        </h4>
-                        <ul className="text-sm text-muted-foreground space-y-1">
-                          {course.labs.map((l) => <li key={l} className="flex items-center gap-1"><ArrowRight className="w-3 h-3 text-gold" />{l}</li>)}
-                        </ul>
-                      </div>
                     </div>
-                    <div className="mt-4">
-                      <h4 className="font-serif font-bold text-foreground mb-3 flex items-center gap-2">
-                        <span className="text-gold">💼</span> Career Opportunities
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {course.careers.map((c) => (
-                          <span key={c} className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">{c}</span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Curriculum Section */}
-      <section id="curriculum" className="py-16 bg-muted/50">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-12">
-            <span className="text-xs font-semibold uppercase tracking-widest text-gold">Academic Structure</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Curriculum Framework</h2>
-            <div className="w-16 h-1 bg-gradient-gold rounded mx-auto" />
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 gap-6">
-            {[
-              { sem: "Semester 1-2", focus: "Foundation", desc: "Mathematics, Physics, Chemistry, English, Engineering Drawing, Workshop Practice, Computer Fundamentals" },
-              { sem: "Semester 3-4", focus: "Core Studies", desc: "Department-specific core subjects, laboratory practicals, industrial visits, and mini projects" },
-              { sem: "Semester 5", focus: "Advanced & Electives", desc: "Advanced subjects, elective courses, major project work, and industry interaction seminars" },
-              { sem: "Semester 6", focus: "Project & Training", desc: "Major project, industrial training (6-8 weeks), seminar presentation, and comprehensive viva" },
-            ].map((s, i) => (
-              <motion.div key={s.sem} variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-card p-6 rounded-xl border border-border shadow-sm">
-                <span className="text-xs font-semibold text-gold uppercase">{s.focus}</span>
-                <h4 className="font-serif font-bold text-foreground mt-1 mb-2">{s.sem}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-              </motion.div>
-            ))}
+                    {expanded === course.id && (
+                        <div className="border-t border-border px-6 py-6 bg-muted/20 animate-fade-in-up">
+                          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div>
+                              <h4 className="font-serif font-bold text-foreground mb-3 flex items-center gap-2">
+                                <span className="text-gold">📋</span> Eligibility
+                              </h4>
+                              <p className="text-sm text-muted-foreground">{course.eligibility}</p>
+                            </div>
+                            <div>
+                              <h4 className="font-serif font-bold text-foreground mb-3 flex items-center gap-2">
+                                <span className="text-gold">📖</span> Key Subjects
+                              </h4>
+                              <div className="flex flex-wrap gap-1.5">
+                                {course.subjects.map((s) => (
+                                    <span key={s} className="text-xs bg-muted px-2 py-1 rounded text-muted-foreground">{s}</span>
+                                ))}
+                              </div>
+                            </div>
+                            <div>
+                              <h4 className="font-serif font-bold text-foreground mb-3 flex items-center gap-2">
+                                <span className="text-gold">🔬</span> Laboratories
+                              </h4>
+                              <ul className="text-sm text-muted-foreground space-y-1">
+                                {course.labs.map((l) => <li key={l} className="flex items-center gap-1"><ArrowRight className="w-3 h-3 text-gold" />{l}</li>)}
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="mt-4">
+                            <h4 className="font-serif font-bold text-foreground mb-3 flex items-center gap-2">
+                              <span className="text-gold">💼</span> Career Opportunities
+                            </h4>
+                            <div className="flex flex-wrap gap-2">
+                              {course.careers.map((c) => (
+                                  <span key={c} className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">{c}</span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                    )}
+                  </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-    </Layout>
+        </section>
+
+        {/* Curriculum Section */}
+        <section id="curriculum" className="py-16 bg-muted/50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-12">
+              <span className="text-xs font-semibold uppercase tracking-widest text-gold">Academic Structure</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Curriculum Framework</h2>
+              <div className="w-16 h-1 bg-gradient-gold rounded mx-auto" />
+            </motion.div>
+
+            <div className="grid sm:grid-cols-2 gap-6">
+              {[
+                { sem: "Semester 1-2", focus: "Foundation", desc: "Mathematics, Physics, Chemistry, English, Engineering Drawing, Workshop Practice, Computer Fundamentals" },
+                { sem: "Semester 3-4", focus: "Core Studies", desc: "Department-specific core subjects, laboratory practicals, industrial visits, and mini projects" },
+                { sem: "Semester 5", focus: "Advanced & Electives", desc: "Advanced subjects, elective courses, major project work, and industry interaction seminars" },
+                { sem: "Semester 6", focus: "Project & Training", desc: "Major project, industrial training (6-8 weeks), seminar presentation, and comprehensive viva" },
+              ].map((s, i) => (
+                  <motion.div key={s.sem} variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+                              transition={{ delay: i * 0.1 }}
+                              className="bg-card p-6 rounded-xl border border-border shadow-sm">
+                    <span className="text-xs font-semibold text-gold uppercase">{s.focus}</span>
+                    <h4 className="font-serif font-bold text-foreground mt-1 mb-2">{s.sem}</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                  </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </Layout>
   );
 };
 

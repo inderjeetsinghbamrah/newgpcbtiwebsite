@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown, ChevronRight, GraduationCap, FlaskConical, Pill, Shield, BookOpen, Users2, Building } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight, GraduationCap, FlaskConical, Pill, Shield, BookOpen, Users2, Building, AlertTriangle, FileText, ExternalLink, Lightbulb, Wrench, UserCog } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -16,20 +16,23 @@ function useDropdown() {
 const Navbar = () => {
   const { t } = useLanguage();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const [mobileAcademicsOpen, setMobileAcademicsOpen] = useState(false);
   const [mobileAffiliationsOpen, setMobileAffiliationsOpen] = useState(false);
   const [mobileCampusOpen, setMobileCampusOpen] = useState(false);
+  const [mobileResearchOpen, setMobileResearchOpen] = useState(false);
 
   const mega = useDropdown();
+  const aboutDrop = useDropdown();
   const affDrop = useDropdown();
   const campusDrop = useDropdown();
+  const researchDrop = useDropdown();
 
   const mainLinks = [
     { label: t.nav.home, href: "/" },
     { label: t.nav.about, href: "/about" },
     { label: t.nav.admissions, href: "/admissions" },
-    { label: t.nav.gallery, href: "/gallery" },
-    { label: t.nav.contact, href: "/contact" },
+    { label: t.nav.alumni, href: "/alumni" },
   ];
 
   const deptGroups = [
@@ -57,6 +60,16 @@ const Navbar = () => {
       icon: <FlaskConical className="w-4 h-4" />,
       items: [{ label: t.nav.appliedSciences, href: "/department/applied-sciences" }],
     },
+    {
+      title: t.nav.workshopSection,
+      icon: <Wrench className="w-4 h-4" />,
+      items: [{ label: t.nav.workshop, href: "/workshop" }],
+    },
+    {
+      title: t.nav.officeStaff,
+      icon: <UserCog className="w-4 h-4" />,
+      items: [{ label: t.nav.officeStaff, href: "/office-staff" }],
+    },
   ];
 
   const affiliationLinks = [
@@ -77,8 +90,10 @@ const Navbar = () => {
     const handler = (e: MouseEvent) => {
       const target = e.target as Node;
       if (mega.ref.current && !mega.ref.current.contains(target)) mega.setOpen(false);
+      if (aboutDrop.ref.current && !aboutDrop.ref.current.contains(target)) aboutDrop.setOpen(false);
       if (affDrop.ref.current && !affDrop.ref.current.contains(target)) affDrop.setOpen(false);
       if (campusDrop.ref.current && !campusDrop.ref.current.contains(target)) campusDrop.setOpen(false);
+      if (researchDrop.ref.current && !researchDrop.ref.current.contains(target)) researchDrop.setOpen(false);
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
@@ -98,18 +113,42 @@ const Navbar = () => {
           </Link>
 
           <div className="hidden lg:flex items-center gap-0.5">
-            {mainLinks.slice(0, 2).map((link) => (
-                <Link key={link.href} to={link.href} className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-md hover:bg-muted">
-                  {link.label}
-                </Link>
-            ))}
+            <Link to="/" className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-md hover:bg-muted">
+              {t.nav.home}
+            </Link>
+
+            {/* About Dropdown */}
+            <div ref={aboutDrop.ref} className="relative" onMouseEnter={aboutDrop.enter} onMouseLeave={aboutDrop.leave}>
+              <button className={`px-3 py-2 text-sm font-medium transition-colors rounded-md flex items-center gap-1 ${aboutDrop.open ? "text-primary bg-muted" : "text-foreground hover:text-primary hover:bg-muted"}`}>
+                {t.nav.about} <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${aboutDrop.open ? "rotate-180" : ""}`} />
+              </button>
+              <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-1 z-50 transition-all duration-200 origin-top ${aboutDrop.open ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"}`}>
+                <div className="bg-card border border-border rounded-xl shadow-2xl w-56">
+                  <div className="py-2">
+                    <Link to="/about" onClick={() => aboutDrop.setOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-foreground hover:text-primary hover:bg-muted transition-colors">
+                      <Building className="w-4 h-4 text-muted-foreground" /> {t.nav.about}
+                    </Link>
+                    <Link to="/anti-ragging" onClick={() => aboutDrop.setOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-foreground hover:text-destructive hover:bg-destructive/5 transition-colors">
+                      <AlertTriangle className="w-4 h-4 text-destructive" /> {t.nav2.antiRagging}
+                    </Link>
+                    <Link to="/general-rules" onClick={() => aboutDrop.setOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-foreground hover:text-primary hover:bg-muted transition-colors">
+                      <FileText className="w-4 h-4 text-muted-foreground" /> {t.nav2.generalRules}
+                    </Link>
+                    <div className="border-t border-border my-1" />
+                    <Link to="/useful-links" onClick={() => aboutDrop.setOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-foreground hover:text-primary hover:bg-muted transition-colors">
+                      <ExternalLink className="w-4 h-4 text-muted-foreground" /> {t.usefulLinks.pageTitle}
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             {/* Academics Mega Menu */}
             <div ref={mega.ref} className="relative" onMouseEnter={mega.enter} onMouseLeave={mega.leave}>
               <button className={`px-3 py-2 text-sm font-medium transition-colors rounded-md flex items-center gap-1 ${mega.open ? "text-primary bg-muted" : "text-foreground hover:text-primary hover:bg-muted"}`}>
                 {t.nav.academics} <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${mega.open ? "rotate-180" : ""}`} />
               </button>
-              <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-1 z-50 transition-all duration-200 origin-top ${mega.open ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"}`} style={{ width: "680px" }}>
+              <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-1 z-50 transition-all duration-200 origin-top ${mega.open ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"}`} style={{ width: "820px" }}>
                 <div className="bg-card border border-border rounded-xl shadow-2xl">
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-4 pb-3 border-b border-border">
@@ -119,7 +158,7 @@ const Navbar = () => {
                         {t.nav.viewAllCourses} <ChevronRight className="w-3 h-3" />
                       </Link>
                     </div>
-                    <div className="grid grid-cols-3 gap-5">
+                    <div className="grid grid-cols-5 gap-5">
                       {deptGroups.map((group) => (
                           <div key={group.title}>
                             <div className="flex items-center gap-2 mb-2">
@@ -180,6 +219,22 @@ const Navbar = () => {
               </div>
             </div>
 
+            {/* Research & Innovation Dropdown */}
+            <div ref={researchDrop.ref} className="relative" onMouseEnter={researchDrop.enter} onMouseLeave={researchDrop.leave}>
+              <button className={`px-3 py-2 text-sm font-medium transition-colors rounded-md flex items-center gap-1 ${researchDrop.open ? "text-primary bg-muted" : "text-foreground hover:text-primary hover:bg-muted"}`}>
+                {t.nav2.researchInnovation} <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${researchDrop.open ? "rotate-180" : ""}`} />
+              </button>
+              <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-1 z-50 transition-all duration-200 origin-top ${researchDrop.open ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"}`}>
+                <div className="bg-card border border-border rounded-xl shadow-2xl w-60">
+                  <div className="py-2">
+                    <Link to="/iic" onClick={() => researchDrop.setOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-foreground hover:text-primary hover:bg-muted transition-colors">
+                      <Lightbulb className="w-4 h-4 text-gold" /> {t.nav2.iic}
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {mainLinks.slice(2).map((link) => (
                 <Link key={link.href} to={link.href} className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-md hover:bg-muted">
                   {link.label}
@@ -201,8 +256,18 @@ const Navbar = () => {
         {mobileOpen && (
             <div className="lg:hidden bg-card border-t border-border px-4 py-4 space-y-1 animate-fade-in max-h-[80vh] overflow-y-auto">
               <Link to="/" className="block px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded-md" onClick={closeMobile}>{t.nav.home}</Link>
-              <Link to="/about" className="block px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded-md" onClick={closeMobile}>{t.nav.about}</Link>
 
+              <button className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded-md" onClick={() => setMobileAboutOpen(!mobileAboutOpen)}>
+                {t.nav.about} <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileAboutOpen ? "rotate-180" : ""}`} />
+              </button>
+              {mobileAboutOpen && (
+                  <div className="pl-2 pb-2">
+                    <Link to="/about" className="block px-5 py-1.5 text-xs text-muted-foreground hover:text-primary" onClick={closeMobile}>{t.nav.about}</Link>
+                    <Link to="/anti-ragging" className="block px-5 py-1.5 text-xs text-destructive font-semibold hover:text-destructive/80" onClick={closeMobile}>⚠ {t.nav2.antiRagging}</Link>
+                    <Link to="/general-rules" className="block px-5 py-1.5 text-xs text-muted-foreground hover:text-primary" onClick={closeMobile}>📋 {t.nav2.generalRules}</Link>
+                    <Link to="/useful-links" className="block px-5 py-1.5 text-xs text-muted-foreground hover:text-primary" onClick={closeMobile}>🔗 {t.usefulLinks.pageTitle}</Link>
+                  </div>
+              )}
               <button className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded-md" onClick={() => setMobileAcademicsOpen(!mobileAcademicsOpen)}>
                 {t.nav.academics} <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileAcademicsOpen ? "rotate-180" : ""}`} />
               </button>
@@ -242,9 +307,17 @@ const Navbar = () => {
                   </div>
               )}
 
+              <button className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded-md" onClick={() => setMobileResearchOpen(!mobileResearchOpen)}>
+                {t.nav2.researchInnovation} <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileResearchOpen ? "rotate-180" : ""}`} />
+              </button>
+              {mobileResearchOpen && (
+                  <div className="pl-2 pb-2">
+                    <Link to="/iic" className="block px-5 py-1.5 text-xs text-muted-foreground hover:text-primary" onClick={closeMobile}>💡 {t.nav2.iic}</Link>
+                  </div>
+              )}
+
               <Link to="/admissions" className="block px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded-md" onClick={closeMobile}>{t.nav.admissions}</Link>
-              <Link to="/gallery" className="block px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded-md" onClick={closeMobile}>{t.nav.gallery}</Link>
-              <Link to="/contact" className="block px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded-md" onClick={closeMobile}>{t.nav.contact}</Link>
+              <Link to="/alumni" className="block px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded-md" onClick={closeMobile}>{t.nav.alumni}</Link>
             </div>
         )}
       </nav>

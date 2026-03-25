@@ -21,6 +21,13 @@ import NSS from "./pages/NSS.tsx";
 import Facilities from "./pages/Facilities.tsx";
 import MandatoryDisclosure from "./pages/MandatoryDisclosure.tsx";
 import Affiliations from "./pages/Affiliations.tsx";
+import Alumni from "./pages/Alumni.tsx";
+import AntiRagging from "./pages/AntiRagging.tsx";
+import GeneralRules from "./pages/GeneralRules.tsx";
+import UsefulLinks from "./pages/UsefulLinks.tsx";
+import IICPage from "./pages/IICPage.tsx";
+import OfficeStaff from "./pages/OfficeStaff.tsx";
+import Workshop from "./pages/Workshop.tsx";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +51,13 @@ const App = () => (
             <Route path="/facilities" element={<Facilities />} />
             <Route path="/mandatory-disclosure" element={<MandatoryDisclosure />} />
             <Route path="/affiliations/:body" element={<Affiliations />} />
+            <Route path="/alumni" element={<Alumni />} />
+            <Route path="/anti-ragging" element={<AntiRagging />} />
+            <Route path="/general-rules" element={<GeneralRules />} />
+            <Route path="/useful-links" element={<UsefulLinks />} />
+            <Route path="/office-staff" element={<OfficeStaff />} />
+            <Route path="/workshop" element={<Workshop />} />
+            <Route path="/iic" element={<IICPage />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/news" element={<News />} />
